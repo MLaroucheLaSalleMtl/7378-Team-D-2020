@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 9c253e1642b29bd40b16c76a4a1eacb9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BtnPlay: {instanceID: 0}
+  - BtnOptions: {instanceID: 0}
+  - BtnQuit: {instanceID: 0}
+  - BtnCredits: {instanceID: 0}
+  - OptionsMenu: {instanceID: 0}
+  - SoundSettings: {instanceID: 0}
+  - VideoSettings: {instanceID: 0}
+  - ControlSettings: {instanceID: 0}
+  - menuRoot: {instanceID: 0}
+  - PopUpExit: {instanceID: 0}
+  - LoadingScreen: {fileID: 5751438792847172021, guid: 30d981038a4c53c4f9917099cdd21d80,
+      type: 3}
+  - sliderBar: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

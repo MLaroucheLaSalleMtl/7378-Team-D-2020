@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//Ask Fabian if any Question
 
 public class PlayerControl : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerControl : MonoBehaviour
     CharacterController capsule;
     Vector3 capsuleCenter;
     float capsuleHeight;
+    Vector3 capsuleStateCenter;
+    float capsuleStateHeight;
 
     //InputSystem
     private bool slowWalk = false;
@@ -31,10 +34,6 @@ public class PlayerControl : MonoBehaviour
 
     //animations
     Animator anim;
-
-    //
-
-
     public void OnWalk(InputAction.CallbackContext context)
     {
         Vector2 value = context.ReadValue<Vector2>();
@@ -43,7 +42,6 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log(value.x);
 
          AnimationController(value.x, value.y);
-
 
     }
     public void OnJump(InputAction.CallbackContext context)
@@ -64,22 +62,21 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
-        
         //crouch
         capsule = GetComponent<CharacterController>();
         capsuleCenter = capsule.center;
+        //capsuleStateCenter = capsule.center / 2f;
         capsuleHeight = capsule.height;
+       // capsuleStateHeight = capsule.height / 2f;
         //animations
         anim = GetComponentInChildren<Animator>();
-
-
+        
     }
 
     void Update()
     {
         Movement();
-        Crouching();
-        
+                
     }
 
     public void Movement()
@@ -106,8 +103,9 @@ public class PlayerControl : MonoBehaviour
             if (jump)
             {
                 gravity = jumpSpeed;
-            }
 
+            }
+          //  Crouching();
         }
 
         gravity += Physics.gravity.y * Time.deltaTime;
@@ -116,10 +114,11 @@ public class PlayerControl : MonoBehaviour
 
     public void Crouching()
     {
+          
         if (crouch)
         {
-            capsule.height = capsule.height / 2f;
-            capsule.center = capsule.center / 2f;
+            capsule.height = capsuleStateHeight;
+            capsule.center = capsuleStateCenter;
         }
         else
         {
@@ -155,49 +154,11 @@ public class PlayerControl : MonoBehaviour
          Object.Destroy(GameObject.FindWithTag("Player"));
          
     }
-  
-    
-
 
     public void AnimationController(float x,float y)
     {
-        if (x == -1)
-        {
-            anim.SetBool("Left", true);
-            // Debug.Log("Left");
-        }
-        else
-        {
-            anim.SetBool("Left", false);
-        }
-
-        if (x == 1)
-        {
-            // Debug.Log("Right");
-            anim.SetBool("Right", true);
-        }
-        else
-        {
-            anim.SetBool("Right", false);
-        }
-        if (y == 1)
-        {
-            anim.SetBool("Forward", true);
-            //Debug.Log("Front");
-        }
-        else
-        {
-            anim.SetBool("Forward", false);
-        }
-        if (y == -1)
-        {
-            anim.SetBool("Backward", true);
-            //Debug.Log("Back");
-        }
-        else
-        {
-            anim.SetBool("Backward", false);
-        }
-
+        Debug.Log(x);
+        anim.SetFloat("X",x);
+        anim.SetFloat("Y",y);
     }
 }
