@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    public PlayerControl player;
-
+    private GameObject player;
 
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        
         
     }
 
@@ -20,11 +20,11 @@ public class DeathZone : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "Player")
         {
               player.GetComponent<PlayerControl>().Death();
-            player.Death();
-           // Destroy(gameObject);
+
+           // Get DeathScreen
         }
 
     }

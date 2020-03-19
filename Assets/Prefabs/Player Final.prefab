@@ -538,10 +538,10 @@ Animator:
   m_GameObject: {fileID: 8425361461155719787}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dded37afae984d94d8bfd40869ac703e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce9cf7188891b2241967c9dacc058a52, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1880,10 +1880,10 @@ Animator:
   m_GameObject: {fileID: 8425361461426903655}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dded37afae984d94d8bfd40869ac703e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce9cf7188891b2241967c9dacc058a52, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -7310,10 +7310,10 @@ Animator:
   m_GameObject: {fileID: 8425361462048350631}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dded37afae984d94d8bfd40869ac703e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce9cf7188891b2241967c9dacc058a52, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -13612,6 +13612,7 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 8
   playerlive: 4
+  health: {fileID: 0}
 --- !u!1 &8425361463034737088
 GameObject:
   m_ObjectHideFlags: 0

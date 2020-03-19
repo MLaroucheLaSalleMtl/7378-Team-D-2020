@@ -21,6 +21,10 @@ public class MenuPause : MonoBehaviour
     void Update()
     {
         GamePaused();
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause = true;
+        }
     }
 
     public void GamePaused()

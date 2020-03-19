@@ -10,6 +10,8 @@ TagManager:
   - Death
   - enemy
   - pull
+  - FX
+  - DeathByLava
   layers:
   - Default
   - TransparentFX
