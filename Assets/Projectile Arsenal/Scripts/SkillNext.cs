@@ -26,10 +26,10 @@ public class SkillNext : MonoBehaviour {
 			SpawnVFX ();	
 		}
 
-		if (Input.GetKeyDown (KeyCode.X))
-			Next ();
-		if (Input.GetKeyDown (KeyCode.Z)) 
-			Previous ();	
+	//	if (Input.GetKeyDown (KeyCode.X))
+	//		Next ();
+	//	if (Input.GetKeyDown (KeyCode.Z)) 
+	//		Previous ();	
 	}
 	void SpawnVFX (){
 		GameObject vfx;

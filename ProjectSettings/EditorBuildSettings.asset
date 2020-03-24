@@ -12,24 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 6b019385d66f3ca41bae8c00f34b0129
   - enabled: 1
-    path: Assets/Scenes/Level_2.unity
-    guid: 2a46e581a07c79043b6d54f4a64b73a2
+    path: Assets/Scenes/SummerLvL.unity
+    guid: b6ab5a3521a5d2e43a04da7197e3573a
   - enabled: 1
-    path: Assets/Scenes/Level_3.unity
-    guid: 336e1612e2d0dde41bce64fafdf6defc
+    path: Assets/Scenes/Winter.unity
+    guid: e972eea78cfe8b143ab6ea769323bf6e
   - enabled: 1
-    path: Assets/Scenes/Level_4.unity
-    guid: ddbeee34c436f8a4581e913a9ca13bf1
+    path: Assets/Scenes/rain level.unity
+    guid: 76f735c7739984e48be1cb1eeaad76ce
   - enabled: 1
-    path: Assets/Scenes/Level_5.unity
-    guid: cad6eaf46f3181a42a3672b4f65dcb77
-  - enabled: 0
     path: Assets/Scenes/Level_1.unity
     guid: cd10fdb969ccc85449a947e61554cf91
-  - enabled: 0
-    path: Assets/Scenes/LevelFail.unity
-    guid: fc73d6fa2ba24bb4c849f608d268fad8
-  - enabled: 0
-    path: Assets/Scenes/Test Scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

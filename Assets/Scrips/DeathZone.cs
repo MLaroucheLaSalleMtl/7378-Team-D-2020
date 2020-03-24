@@ -23,8 +23,8 @@ public class DeathZone : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
               player.GetComponent<PlayerControl>().Death();
-
-           // Get DeathScreen
+              PlayerStats.death = true;
+           
         }
 
     }

@@ -28,8 +28,8 @@ public class RotateToMouse : MonoBehaviour {
 		}		
 	}
 
-	void RotateToMouseDirection (GameObject obj, Vector3 destination){
-		direction = destination - obj.transform.position;
+	void RotateToMouseDirection (GameObject obj, Vector2 destination){
+		direction = destination; //- obj.transform.position;
 		rotation = Quaternion.LookRotation (direction);
 		obj.transform.localRotation = Quaternion.Lerp (obj.transform.rotation, rotation, 1);
 	}

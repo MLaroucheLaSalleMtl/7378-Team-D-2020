@@ -14,8 +14,6 @@ public class PlayerControl : MonoBehaviour
     public float jumpSpeed = 8.0F;
     private float gravity = 0f;
     private Vector3 moveDirection = Vector3.zero;
-    public int playerlive = 4;
-    public GameObject health;
   
 
     //capsule for croch
@@ -34,6 +32,11 @@ public class PlayerControl : MonoBehaviour
 
     //animations
     Animator anim;
+
+    public void flip()
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
     public void OnWalk(InputAction.CallbackContext context)
     {
         Vector2 value = context.ReadValue<Vector2>();
@@ -76,7 +79,8 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         Movement();
-                
+     
+
     }
 
     public void Movement()
@@ -127,38 +131,21 @@ public class PlayerControl : MonoBehaviour
             crouch = false;
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        //if(other.transform.tag == "Death")
-        //{
-        //   //Death();
-        //   playerlive = playerlive - 1;
-            
-        //}
-        if(other.transform.tag == "Death")
-        {
-            playerlive--;
-            health.GetComponent<Text>().text = "Lives : " + playerlive;
-            if (playerlive == 0)
-            {
-               
-                Death();
-            }
-        }
-       
 
-    }
+
     public void Death()
     {
-        // Debug.Log("Death");
+        
          Object.Destroy(GameObject.FindWithTag("Player"));
          
     }
 
     public void AnimationController(float x,float y)
     {
-        Debug.Log(x);
+        //Debug.Log(x);
+        //Debug.Log(y);
         anim.SetFloat("X",x);
         anim.SetFloat("Y",y);
     }
+  
 }

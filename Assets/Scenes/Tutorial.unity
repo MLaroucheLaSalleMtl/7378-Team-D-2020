@@ -2037,10 +2037,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8425361461155719787, guid: 8d5b507ee6553d740a7d3bb94ca5af8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425361461426903655, guid: 8d5b507ee6553d740a7d3bb94ca5af8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8425361461650262386, guid: 8d5b507ee6553d740a7d3bb94ca5af8b,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425361461650262389, guid: 8d5b507ee6553d740a7d3bb94ca5af8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425361462048350631, guid: 8d5b507ee6553d740a7d3bb94ca5af8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8425361463030270034, guid: 8d5b507ee6553d740a7d3bb94ca5af8b,
         type: 3}
