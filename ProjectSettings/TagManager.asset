@@ -12,6 +12,7 @@ TagManager:
   - pull
   - FX
   - DeathByLava
+  - Treasure
   layers:
   - Default
   - TransparentFX

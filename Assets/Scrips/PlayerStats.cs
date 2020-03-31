@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour
             UseStamina(15);
         }
     }
-    public void TakeDamage(int damage)
+   public void TakeDamage(int damage)
     {
        if (playerlives != 0)
         {
@@ -104,5 +104,19 @@ public class PlayerStats : MonoBehaviour
             }
     
        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.transform.tag == "Death")
+        {
+            TakeDamage(20);
+            //if (playerlives == 0)
+            //{
+               death = true;
+            //    player.GetComponent<PlayerControl>().Death();
+            //}
+        }
     }
 }

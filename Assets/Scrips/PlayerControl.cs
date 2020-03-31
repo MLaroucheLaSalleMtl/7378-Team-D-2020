@@ -27,8 +27,9 @@ public class PlayerControl : MonoBehaviour
     private bool slowWalk = false;
     private bool jump = false;
     private bool crouch = false;
-    private float v = 0;
-    private float h = 0;
+    private bool projectile = false;
+    public float v = 0;
+    public float h = 0;
 
     //animations
     Animator anim;
@@ -50,6 +51,7 @@ public class PlayerControl : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         jump = context.performed;
+
     }
     public void OnCrouch(InputAction.CallbackContext context)
     {
@@ -61,6 +63,10 @@ public class PlayerControl : MonoBehaviour
 
         slowWalk = context.performed;
 
+    }
+    public void OnProjectile(InputAction.CallbackContext context)
+    {
+        projectile = context.performed;
     }
 
     void Start()
@@ -107,6 +113,7 @@ public class PlayerControl : MonoBehaviour
             if (jump)
             {
                 gravity = jumpSpeed;
+               // anim.SetBool("Jump", true);
 
             }
           //  Crouching();
@@ -146,6 +153,15 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log(y);
         anim.SetFloat("X",x);
         anim.SetFloat("Y",y);
+        if (projectile)
+        {
+            anim.SetBool("Projectile", true);
+        }
+        else
+        {
+            anim.SetBool("Projectile", false);
+        }
+        
     }
   
 }

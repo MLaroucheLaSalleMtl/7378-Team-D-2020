@@ -16,7 +16,7 @@ public class SkillSetting : MonoBehaviour {
 	public GameObject hitPrefab;
     public AudioClip shotFX;
 	public List<GameObject> trails;
-	
+	public GameObject firepoint;
 	private Vector3 offset;
 
 	void Start () {	
@@ -43,7 +43,8 @@ public class SkillSetting : MonoBehaviour {
 
 		if (muzzlePrefab != null) {
 			var muzzleVFX = Instantiate (muzzlePrefab, transform.position, Quaternion.identity);
-			muzzleVFX.transform.forward = gameObject.transform.forward + offset;
+			muzzleVFX.transform.right = gameObject.transform.right + offset;
+			
 			var ps = muzzleVFX.GetComponent<ParticleSystem>();
 			if (ps != null)
 				Destroy (muzzleVFX, ps.main.duration);
@@ -62,9 +63,20 @@ public class SkillSetting : MonoBehaviour {
 
 	
 
-	void Update () {	
+	void Update () {
 		if (speed != 0)
-			transform.position += (transform.forward + offset)  * (speed * Time.deltaTime);
+		{
+
+			//		transform.position += transform.TransformDirection(Vector3.left + offset) * (speed * Time.deltaTime);
+
+
+			
+		transform.position +=transform.TransformDirection(Vector3.right + offset) * (speed * Time.deltaTime);
+			
+			
+
+		}
+		
 	}
 
 	void OnCollisionEnter (Collision co) {

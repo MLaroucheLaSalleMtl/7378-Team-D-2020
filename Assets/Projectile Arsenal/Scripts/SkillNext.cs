@@ -21,15 +21,18 @@ public class SkillNext : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetMouseButton (0) && Time.time >= timeToFire){
+		if(Input.GetKey(KeyCode.G) && Time.time >= timeToFire)
+	
+		{
+		
 			timeToFire = Time.time + 1f / effectToSpawn.GetComponent<SkillSetting>().fireRate;
-			SpawnVFX ();	
+			SpawnVFX();
 		}
 
-	//	if (Input.GetKeyDown (KeyCode.X))
-	//		Next ();
-	//	if (Input.GetKeyDown (KeyCode.Z)) 
-	//		Previous ();	
+		//	if (Input.GetKeyDown (KeyCode.X))
+		//		Next ();
+		//	if (Input.GetKeyDown (KeyCode.Z)) 
+		//		Previous ();	
 	}
 	void SpawnVFX (){
 		GameObject vfx;
@@ -38,7 +41,7 @@ public class SkillNext : MonoBehaviour {
 		if (firePoint != null) {
 			vfx = Instantiate (effectToSpawn, firePoint.transform.position, Quaternion.identity);
 			if(rotateToMouse != null){
-				vfx.transform.localRotation = rotateToMouse.GetRotation ();
+				//vfx.transform.localRotation = rotateToMouse.GetRotation ();
 			} 
 			else Debug.Log ("No RotateToMouseScript found on firePoint.");
 		}
@@ -46,29 +49,47 @@ public class SkillNext : MonoBehaviour {
 			vfx = Instantiate (effectToSpawn);
 
 	}
-	
-		public void Next () {
-		count++;
+	//void SpawnVFXLeft()
+	//{
+	//	GameObject vfx;
 
-		if (count > VFXs.Count)
-			count = 0;
 
-		for(int i = 0; i < VFXs.Count; i++){
-			if (count == i)	effectToSpawn = VFXs [i];
-			if (effectName != null)	effectName.text = effectToSpawn.name;
-		}
-	}
+	//	if (firpointleft != null)
+	//	{
+	//		vfx = Instantiate(effectToSpawn, firePoint.transform.position, Quaternion.identity);
+	//		if (rotateToMouse != null)
+	//		{
+	//			//vfx.transform.localRotation = rotateToMouse.GetRotation ();
+	//		}
+	//		else Debug.Log("No RotateToMouseScript found on firePoint.");
+	//	}
+	//	else
+	//		vfx = Instantiate(effectToSpawn);
 
-	public void Previous () {
-		count--;
+	//}
 
-		if (count < 0)
-			count = VFXs.Count;
+	//	public void Next () {
+	//	count++;
 
-		for (int i = 0; i < VFXs.Count; i++) {
-			if (count == i) effectToSpawn = VFXs [i];
-			if (effectName != null)	effectName.text = effectToSpawn.name;
-		}
-	}
-	
+	//	if (count > VFXs.Count)
+	//		count = 0;
+
+	//	for(int i = 0; i < VFXs.Count; i++){
+	//		if (count == i)	effectToSpawn = VFXs [i];
+	//		if (effectName != null)	effectName.text = effectToSpawn.name;
+	//	}
+	//}
+
+	//public void Previous () {
+	//	count--;
+
+	//	if (count < 0)
+	//		count = VFXs.Count;
+
+	//	for (int i = 0; i < VFXs.Count; i++) {
+	//		if (count == i) effectToSpawn = VFXs [i];
+	//		if (effectName != null)	effectName.text = effectToSpawn.name;
+	//	}
+	//}
+
 }
