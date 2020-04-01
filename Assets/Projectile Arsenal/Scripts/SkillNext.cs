@@ -29,10 +29,10 @@ public class SkillNext : MonoBehaviour {
 			SpawnVFX();
 		}
 
-		//	if (Input.GetKeyDown (KeyCode.X))
-		//		Next ();
-		//	if (Input.GetKeyDown (KeyCode.Z)) 
-		//		Previous ();	
+		if (Input.GetKeyDown(KeyCode.X))
+			Next();
+		if (Input.GetKeyDown(KeyCode.Z))
+			Previous();
 	}
 	void SpawnVFX (){
 		GameObject vfx;
@@ -68,28 +68,32 @@ public class SkillNext : MonoBehaviour {
 
 	//}
 
-	//	public void Next () {
-	//	count++;
+	public void Next()
+	{
+		count++;
 
-	//	if (count > VFXs.Count)
-	//		count = 0;
+		if (count > VFXs.Count)
+			count = 0;
 
-	//	for(int i = 0; i < VFXs.Count; i++){
-	//		if (count == i)	effectToSpawn = VFXs [i];
-	//		if (effectName != null)	effectName.text = effectToSpawn.name;
-	//	}
-	//}
+		for (int i = 0; i < VFXs.Count; i++)
+		{
+			if (count == i) effectToSpawn = VFXs[i];
+			if (effectName != null) effectName.text = effectToSpawn.name;
+		}
+	}
 
-	//public void Previous () {
-	//	count--;
+	public void Previous()
+	{
+		count--;
 
-	//	if (count < 0)
-	//		count = VFXs.Count;
+		if (count < 0)
+			count = VFXs.Count;
 
-	//	for (int i = 0; i < VFXs.Count; i++) {
-	//		if (count == i) effectToSpawn = VFXs [i];
-	//		if (effectName != null)	effectName.text = effectToSpawn.name;
-	//	}
-	//}
+		for (int i = 0; i < VFXs.Count; i++)
+		{
+			if (count == i) effectToSpawn = VFXs[i];
+			if (effectName != null) effectName.text = effectToSpawn.name;
+		}
+	}
 
 }

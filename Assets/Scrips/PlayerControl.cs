@@ -30,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     private bool projectile = false;
     public float v = 0;
     public float h = 0;
+    public float d = 0;
 
     //animations
     Animator anim;
@@ -43,7 +44,17 @@ public class PlayerControl : MonoBehaviour
         Vector2 value = context.ReadValue<Vector2>();
         h = value.x;
         v = value.y;
-        //Debug.Log(value.x);
+        //d = value.x * value.y;
+        //Debug.Log(d);
+
+        if (h != 0 || v!=0)
+        {
+            anim.SetBool("Moving", true);
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
+        }
 
          AnimationController(value.x, value.y);
 
@@ -67,6 +78,16 @@ public class PlayerControl : MonoBehaviour
     public void OnProjectile(InputAction.CallbackContext context)
     {
         projectile = context.performed;
+        if (projectile)
+        {
+            anim.SetBool("Attacking", true);            
+        }
+        else
+        {
+            anim.SetBool("Attacking", false);
+        }
+            
+        
     }
 
     void Start()
@@ -94,11 +115,10 @@ public class PlayerControl : MonoBehaviour
         CharacterController controller = GetComponent<CharacterController>();
               
         moveDirection = new Vector3(h * speed, gravity, v * speed);
-  
 
-       // Debug.Log(moveDirection);
-    
-        
+        // Debug.Log(moveDirection);
+
+
         if (controller.isGrounded)
         {
             if (slowWalk == true)
@@ -113,8 +133,7 @@ public class PlayerControl : MonoBehaviour
             if (jump)
             {
                 gravity = jumpSpeed;
-               // anim.SetBool("Jump", true);
-
+               
             }
           //  Crouching();
         }
@@ -149,19 +168,13 @@ public class PlayerControl : MonoBehaviour
 
     public void AnimationController(float x,float y)
     {
-        //Debug.Log(x);
+        //Debug.Log(a);
         //Debug.Log(y);
-        anim.SetFloat("X",x);
-        anim.SetFloat("Y",y);
-        if (projectile)
-        {
-            anim.SetBool("Projectile", true);
-        }
-        else
-        {
-            anim.SetBool("Projectile", false);
-        }
-        
+
+        //movement
+
+        anim.SetFloat("X", x);
+        anim.SetFloat("Y", y);
     }
   
 }
