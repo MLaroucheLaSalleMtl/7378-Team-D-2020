@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 2546542945010437725}
   - component: {fileID: 2452797643966080601}
   - component: {fileID: 2547161629567267205}
-  - component: {fileID: 2547161629567267204}
   m_Layer: 0
   m_Name: Polygonal Treasure Chest Blue 1
   m_TagString: Untagged
@@ -102,18 +101,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.94727325, y: 0.86136246, z: 1}
   m_Center: {x: -0.026363373, y: 0.24759865, z: -0}
---- !u!114 &2547161629567267204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547609447454019533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f184f11cd0b5864ea524cd39c79afae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2548051758476968839
 GameObject:
   m_ObjectHideFlags: 0

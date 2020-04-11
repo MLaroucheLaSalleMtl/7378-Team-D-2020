@@ -13,6 +13,8 @@ TagManager:
   - FX
   - DeathByLava
   - Treasure
+  - Ice
+  - UI
   layers:
   - Default
   - TransparentFX

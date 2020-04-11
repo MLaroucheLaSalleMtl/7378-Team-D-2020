@@ -33,7 +33,7 @@ public class RotateToMouse : MonoBehaviour {
 			Debug.DrawRay(firpoint.transform.position,firpoint.transform.TransformDirection(Vector3.forward) * 1000, Color.red);
 			//Debug.DrawRay(firpoint2.transform.position, transform.TransformDirection(Vector3.left) * 1000, Color.red);
 			//Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * 1000, Color.white);
-			Debug.Log("Did not Hit");
+			//Debug.Log("Did not Hit");
 		}
 		//rayMouse = cam.ScreenPointToRay (mousePos);
 		//if (Physics.Raycast (rayMouse.origin, rayMouse.direction, out hit, maximumLenght)) {

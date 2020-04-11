@@ -242,7 +242,7 @@
                 {
                     "name": "",
                     "id": "1cd30a16-8189-492b-acab-e2a3dd7545d5",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -290,6 +290,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "AttackProjectile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35235c40-3c50-4af0-a356-6147505f5189",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "AttackProjectile",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1495117787297276826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495117787297276804}
+  - component: {fileID: 1495117787297276827}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1495117787297276804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495117787297276826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1495117787297276827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495117787297276826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d3461780ee4d040944dceb0b74b57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Death
+    clip: {fileID: 8300000, guid: 38813e25751ed8544acc2eb85b97b2eb, type: 3}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
+  - name: Collect
+    clip: {fileID: 8300000, guid: 4cfaec34f5f4e8b4c89a8dc35de163d0, type: 3}
+    source: {fileID: 0}
+    volume: 0.797
+    pitch: 1
+  - name: Respawn
+    clip: {fileID: 8300000, guid: ede249beed34c8444b337546d9342dd9, type: 3}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
+  - name: Music
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
+  - name: Spider
+    clip: {fileID: 8300000, guid: 72b0b39d22ba2784da63a27cef944007, type: 3}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
+  - name: Wolf
+    clip: {fileID: 8300000, guid: eef72f98ea567d841a4683f713798020, type: 3}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
+  - name: Enemy
+    clip: {fileID: 8300000, guid: f93b1ac74ce2ac247bfe0e71c9a227c5, type: 3}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
