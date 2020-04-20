@@ -1,29 +1,34 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Invantory : MonoBehaviour
 {
-    
+    public Component doorcollider;
     public GameObject slot;
-    public GameObject Button;
+    public GameObject key;
+   
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-           
-            Destroy(gameObject);
-            
-            Button.SetActive(true);
+            doorcollider.GetComponent<BoxCollider>().enabled = true;
             slot.SetActive(true);
+            key.SetActive(false);
+            
+        }
 
-        }
-        else
-        {
-            slot.SetActive(false);
-            Button.SetActive(false);
-        }
     }
-
 }
+
+  
+
+
+
+
+    
+
+
+

@@ -1,26 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class collectible : MonoBehaviour
 {
-    //public AudioSource collectscound;
-    public Transform collected;
-    public int score = 50;
-    private GameObject UI;
+    public Transform particles;
+    public Text highscore;
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Instantiate(particles, transform.position, transform.rotation);
+            FindObjectOfType<AudioManager>().Play("Collect");
+            finalcollect.thescore += 50;
+            Destroy(gameObject);
+            if (finalcollect.thescore > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", finalcollect.thescore);
+                highscore.text = finalcollect.thescore.ToString();
+            }
 
-    private void Start()
-    {
-        UI = GameObject.FindWithTag("UI");
+        }
+
     }
-    void OnTriggerEnter(Collider other)
+    public void Reset()
     {
-        FindObjectOfType<AudioManager>().Play("Collect");
-        //   collectscound.Play();
-        UI.GetComponent<InGameUI>().updateScore(score);
-        Instantiate(collected, transform.position, transform.rotation);
-        //Debug.Log("destroy");
-      
-        Destroy(gameObject); 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerPrefs.DeleteAll();
+            highscore.text = "0";
+        }
+    }
+    private void Update()
+    {
+        highscore.text = finalcollect.thescore.ToString();
+        Reset();
     }
 }
+
+

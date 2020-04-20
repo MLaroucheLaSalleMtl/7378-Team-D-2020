@@ -11,6 +11,9 @@ public class CharacterSelection : MonoBehaviour
     public GameObject Buttons;
     public GameObject cameraFollow;
     public GameObject InvisibleWall;
+    public GameObject EmptyGameObject;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,8 @@ public class CharacterSelection : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-       // DontDestroyOnLoad(transform.gameObject);
+        // DontDestroyOnLoad(transform.gameObject);
+       
     }
    
     public void checkCameraFollow()
@@ -30,6 +34,7 @@ public class CharacterSelection : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.buildIndex >= (2))
         {
+            EmptyGameObject.transform.parent = characterList[index].transform;
             cameraFollow.transform.parent = characterList[index].transform;
         }
 
@@ -37,7 +42,7 @@ public class CharacterSelection : MonoBehaviour
     public void characterSelection()
     {
         characterList = new GameObject[transform.childCount];
-
+        
         for (int i = 0; i < transform.childCount; i++)
         {
             characterList[i] = transform.GetChild(i).gameObject;

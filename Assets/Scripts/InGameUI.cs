@@ -31,6 +31,7 @@ public class InGameUI : MonoBehaviour
     public void updateScore(int scr)
     {       
         Score.text = "Score:" + scr.ToString();
+       
     }
 
     public void OnPause(InputAction.CallbackContext context)
@@ -43,13 +44,13 @@ public class InGameUI : MonoBehaviour
     private void Start()
     {
         HealthBar.maxValue = PlayerStats.maxHealth;
-        StaminaBar.maxValue = PlayerStats.maxStamina;
+       // StaminaBar.maxValue = PlayerStats.maxStamina;
     }
 
     void Update()
     {
         health = PlayerStats.currHealth;
-        stamina = PlayerStats.currStamina;
+       // stamina = PlayerStats.currStamina;
         lives = PlayerStats.playerlives;
         death = PlayerStats.death;
         UpdateUI(); 

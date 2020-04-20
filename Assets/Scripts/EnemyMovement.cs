@@ -17,7 +17,14 @@ public class EnemyMovement : MonoBehaviour
     private float cooldown;
     private int randomNumber;
     bool attacking = false;
+    public float damage = 0.3f;
+    public float enHealth = 100;
 
+
+    public Collider Rightarm;
+    public Collider Leftarm;
+    public GameObject objecta;
+    public Animation objectb;
 
     void Awake()
     {
@@ -30,6 +37,13 @@ public class EnemyMovement : MonoBehaviour
         timerForNextAttack = cooldown;
         nav.stoppingDistance = attackrange;
         cooldown = 2;
+
+        Rightarm = GetComponent<Collider>();
+        Leftarm = GetComponent<Collider>();
+
+       // objectb = GetComponent<Animation>();
+      //  objecta = GetComponent<GameObject>();
+
     }
     void Update()
     {
@@ -62,12 +76,16 @@ public class EnemyMovement : MonoBehaviour
             }
             if (randomNumber == 2)
             {
-                anim.SetTrigger("Double Punch Attack");
+                anim.SetTrigger("Double Punch Attack");              
             }
+        
             if (randomNumber == 3)
             {
                 anim.SetTrigger("Hit Ground Attack");
-            }
+
+                objecta.SetActive(true);
+                objectb.Play();               
+            }     
             if (randomNumber == 4)
             {
                 anim.SetTrigger("Cast Spell Attack");
@@ -118,6 +136,22 @@ public class EnemyMovement : MonoBehaviour
             anim.SetBool("Walk Forward", false);
             anim.SetBool("Run Forward", false);
         }
+        if (enHealth <= 0)
+        {
+            anim.SetBool("Die", true);
+            StartCoroutine(destroy());
+
+        }
+    }
+    public void Endamage(float endam)
+    {
+
+        enHealth -= endam;
+    }
+    IEnumerator destroy()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
     private void OnDrawGizmosSelected()
     {

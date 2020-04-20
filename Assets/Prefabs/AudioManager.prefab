@@ -49,33 +49,46 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.586
     pitch: 1
+    Loop: 0
   - name: Collect
     clip: {fileID: 8300000, guid: 4cfaec34f5f4e8b4c89a8dc35de163d0, type: 3}
     source: {fileID: 0}
     volume: 0.797
     pitch: 1
+    Loop: 0
   - name: Respawn
     clip: {fileID: 8300000, guid: ede249beed34c8444b337546d9342dd9, type: 3}
     source: {fileID: 0}
     volume: 0.586
     pitch: 1
+    Loop: 0
   - name: Music
     clip: {fileID: 0}
     source: {fileID: 0}
     volume: 0.586
     pitch: 1
+    Loop: 0
   - name: Spider
     clip: {fileID: 8300000, guid: 72b0b39d22ba2784da63a27cef944007, type: 3}
     source: {fileID: 0}
     volume: 0.586
     pitch: 1
+    Loop: 0
   - name: Wolf
     clip: {fileID: 8300000, guid: eef72f98ea567d841a4683f713798020, type: 3}
     source: {fileID: 0}
     volume: 0.586
     pitch: 1
+    Loop: 0
   - name: Enemy
     clip: {fileID: 8300000, guid: f93b1ac74ce2ac247bfe0e71c9a227c5, type: 3}
     source: {fileID: 0}
     volume: 0.586
     pitch: 1
+    Loop: 0
+  - name: Menu
+    clip: {fileID: 8300000, guid: 1b6923cdbb750634fa23f4fc90ef37cc, type: 3}
+    source: {fileID: 0}
+    volume: 0.586
+    pitch: 1
+    Loop: 0

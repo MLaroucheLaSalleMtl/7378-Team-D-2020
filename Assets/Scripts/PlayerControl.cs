@@ -161,12 +161,14 @@ public class PlayerControl : MonoBehaviour
 
         if (crouch)
         {
+            anim.SetBool("Crouch", true);
             capsule.center = new Vector3(0, -0.40f, 0);
             capsule.height = 0.6f;
             slowWalk = true;
         }
         else
         {
+            anim.SetBool("Crouch", false);
             capsule.center = new Vector3(0, 0, 0);
             capsule.height = 1.5f;
             slowWalk = false;

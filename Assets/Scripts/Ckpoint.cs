@@ -6,19 +6,13 @@ using UnityEngine.SceneManagement;
 public class Ckpoint : MonoBehaviour
 {
     public Transform chkpoint;
-    //public void OnTriggerEnter(Collider other)//if the player touch this circle he will enter the
-    //    // next Scene which is level 2
-    //{
-    //    if(other.tag == "Player")
-    //    {
-    //        SceneManager.LoadScene(2);
-    //    }
-    //}
+    public GameObject Heart1;
+    
     private IEnumerator WaitForSceneLoad()
     {
         yield return new WaitForSeconds(1);
         
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
 
     }
     void OnTriggerEnter(Collider other)
@@ -27,7 +21,9 @@ public class Ckpoint : MonoBehaviour
         Instantiate(chkpoint, transform.position, transform.rotation);
         // Do your things, then:
         StartCoroutine(WaitForSceneLoad());
+        Heart1.SetActive(true);
+        
        
         // And done
-    }
+    } 
 }

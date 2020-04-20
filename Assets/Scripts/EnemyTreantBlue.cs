@@ -33,12 +33,14 @@ public class EnemyTreantBlue : MonoBehaviour
                 // anim.SetBool("IsWalking", true);
                 this.transform.Translate(0, 0, 0.05f);
                 anim.SetBool("IsWalking", true);
+                anim.SetBool("IsAttack", true);
+                FindObjectOfType<AudioManager>().Play("Treant");
             }
             else
             {
                 anim.SetBool("IsAttack", true);
                 anim.SetBool("IsWalking", false);
-                FindObjectOfType<AudioManager>().Play("Enemy");
+               
             }
 
         }
@@ -46,7 +48,7 @@ public class EnemyTreantBlue : MonoBehaviour
         {
             anim.SetBool("IsIdle", true);
             anim.SetBool("IsWalking", false);
-            anim.SetBool("IsAttacking", false);
+            anim.SetBool("IsAttack", false);
         }
         if (enHealth <= 0)
         {

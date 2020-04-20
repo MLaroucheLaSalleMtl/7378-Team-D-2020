@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 440198}
   - component: {fileID: 3301452}
   - component: {fileID: 2341812}
+  - component: {fileID: 2590068552999148751}
   m_Layer: 0
   m_Name: SM_Bld_House_Room_02_Snow
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2590068552999148751
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: dc0391ab74414d1469116f312f99927b, type: 3}

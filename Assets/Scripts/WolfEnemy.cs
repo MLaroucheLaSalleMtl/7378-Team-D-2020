@@ -15,7 +15,11 @@ public class WolfEnemy : MonoBehaviour
     private float timerForNextAttack;
     private float cooldown;
     private int randomNumber;
-    bool attacking = false;
+
+    public Rigidbody wolf;
+    public float force = -50f;
+    public float damage = 0.3f;
+    public float enHealth = 100;
 
     public Collider colliderAttack;
 
@@ -24,7 +28,7 @@ public class WolfEnemy : MonoBehaviour
     {
         // Set up the references.
         player = GameObject.FindGameObjectWithTag("Player").transform;
-       
+        wolf = GetComponent<Rigidbody>();
         //playerHealth = player.GetComponent<PlayerHealth>();
         //enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
@@ -45,6 +49,7 @@ public class WolfEnemy : MonoBehaviour
 
     public void WolfAttacks()
     {
+        FindObjectOfType<AudioManager>().Play("Wolf");
 
             if (randomNumber == 1)
             {
@@ -62,67 +67,52 @@ public class WolfEnemy : MonoBehaviour
   
     }
 
-    bool Blue = false;
-    bool Red = false;
     public void enemyMoves()
     {
-        if (Vector3.Distance(player.position, this.transform.position) <= maxLookRadius)
-        {
-            Blue = true;
-
-            if ((Vector3.Distance(player.position, this.transform.position) <= attackrange))
-            {
-                Red = true;
-               // FindObjectOfType<AudioManager>().Play("Wolf");
-            }
-            else
-            {
-                Red = false;
-            }
-            
-        }
-        else
-        {
-            Blue = false;
-        }
-
-
-        if (Blue == true && Red == false)
+        wolf.AddForce(Vector3.up * force);
+        if (Vector3.Distance(player.position, this.transform.position) < maxLookRadius)
         {
             Vector3 direction = player.position - this.transform.position;
             direction.y = 0;
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-            Quaternion.LookRotation(direction), 0.1f);
-            colliderAttack.enabled = false;
-            anim.SetBool("Run Forward", true);
+                Quaternion.LookRotation(direction), 0.1f);
+            anim.SetBool("Resting", false);
+            if (direction.magnitude > 1)
+            {
+                this.transform.Translate(0, 0, 0.05f);
+                anim.SetBool("Walk Forward", true);
+            }
+            else
+            {
+                WolfAttacks();
+                anim.SetBool("Walk Forward", false);
+                FindObjectOfType<AudioManager>().Play("Enemy");
+            }
 
-
-            nav.destination = player.position;
         }
         else
         {
-            anim.SetBool("Run Forward", false);
-
-
+            anim.SetBool("Resting", true);
+            anim.SetBool("Walk Forward", false);
+            WolfAttacks();
         }
-        if (Red ==true && Blue == true)
+        if (enHealth <= 0)
         {
-            colliderAttack.enabled = true;
-            anim.SetBool("Run Forward", false);
-            if (timerForNextAttack > 0)
-            {
-                timerForNextAttack -= Time.deltaTime;
+            anim.SetBool("Die", true);
+            StartCoroutine(destroy());
 
-            }
-            else if (timerForNextAttack <= 0)
-            {
-                
-                WolfAttacks();
-                randomNumber = Random.Range(1, 3);
-                timerForNextAttack = cooldown;
-            }
         }
 
+    }
+    public void Endamage(float endam)
+    {
+
+        enHealth -= endam;
+    }
+    IEnumerator destroy()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
     private void OnDrawGizmosSelected()
     {

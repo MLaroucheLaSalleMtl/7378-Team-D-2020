@@ -28828,6 +28828,7 @@ GameObject:
   - component: {fileID: 65177384893711666}
   - component: {fileID: 108095894657363090}
   - component: {fileID: 82088484426285818}
+  - component: {fileID: -1081118225130764222}
   m_Layer: 0
   m_Name: jectile1
   m_TagString: FX
@@ -28877,6 +28878,7 @@ MonoBehaviour:
   hitPrefab: {fileID: 1518921343645260, guid: 19ad3e3628d5d954f938fcc33e837c4a, type: 3}
   shotFX: {fileID: 8300000, guid: aa5010ca36d23124197433731a6d29b2, type: 3}
   trails: []
+  firepoint: {fileID: 0}
 --- !u!54 &54552689501825584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29063,3 +29065,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &-1081118225130764222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986968855066404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2824d084132fa84192e8e01a0e2005a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endam: 15

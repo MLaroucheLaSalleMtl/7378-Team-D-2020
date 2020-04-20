@@ -33,14 +33,19 @@ public class Ratios : MonoBehaviour
     }
 
    public void setRatio(int ratioIndex)
-    {
+   {
         Resolution resolution = resolutions[ratioIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+   }
 
-
-    void Update()
+    public void setQuality(int qualityIndex)
     {
-        
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
+
+    public void setFullScreen(bool isFull)
+    {
+        Screen.fullScreen = isFull;
+    }
+   
 }

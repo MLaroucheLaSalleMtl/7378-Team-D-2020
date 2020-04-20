@@ -53,7 +53,7 @@ public class enemycontrolNew : MonoBehaviour
         {
             anim.SetBool("IsIdle", true);
             anim.SetBool("IsWalking", false);
-            anim.SetBool("IsAttacking", false);
+            anim.SetBool("IsAttack", false);
         }
         if (enHealth <= 0)
         {

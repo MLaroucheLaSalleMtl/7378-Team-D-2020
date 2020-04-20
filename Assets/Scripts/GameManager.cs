@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Button BtnOptions;
     public Button BtnQuit;
     public Button BtnCredits;
+    public Button BtnAbout;
 
     private bool btnpopup = false;
 
@@ -20,11 +21,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject ControlSettings;
     [SerializeField] public GameObject menuRoot;
     [SerializeField] public GameObject PopUpExit;
+    [SerializeField] public GameObject AboutMenu;
+
+    // osmethings
+    public GameObject credits;
+    public GameObject creditsb;
+    public GameObject creditsc;
+   // public GameObject btnaiuda;
+    private int aiuda = 0;
 
     //loading Screen
     public GameObject LoadingScreen;
     public Slider sliderBar;
     public TextMeshProUGUI text;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +42,22 @@ public class GameManager : MonoBehaviour
         BtnOptions.GetComponent<Button>();
         BtnQuit.GetComponent<Button>();
         BtnCredits.GetComponent<Button>();
-        
+        BtnAbout.GetComponent<Button>();
+        FindObjectOfType<AudioManager>().Play("Menu");
+    }
+    
+    public void DemoLVL()
+    {
+        SceneManager.LoadScene("Demo");
     }
 
     public void LoadLevels(int sceneIndex)
-    {       
+    {
+        StartCoroutine(WaitForSceneLoad());
         StartCoroutine (LoadAsyncronously(sceneIndex));
     }
+
+    
     IEnumerator LoadAsyncronously(int sceneIndex)
     {  
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
@@ -55,13 +74,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(5);
+    }
+
     public void BtnSettings()
     {
+        StartCoroutine(WaitForSceneLoad());
         OptionsMenu.SetActive(true);
+        menuRoot.SetActive(false);
+    }
+    public void BtnAboutGame()
+    {
+        AboutMenu.SetActive(true);
         menuRoot.SetActive(false);
     }
     public void BtnExit()
     {
+       // Debug.Log("a");
         btnpopup = true;
         SetBtnActive();
         PopUpExit.SetActive(true);
@@ -78,12 +109,36 @@ public class GameManager : MonoBehaviour
     }
     public void Credits()
     {
-        Debug.Log("credits");
+        //Debug.Log("credits");
+
+        aiuda++;
+        if (aiuda == 1)
+        {
+            credits.SetActive(true);
+        }
+        if (aiuda == 2)
+        {
+            creditsb.SetActive(true);
+        }
+        if (aiuda == 3)
+        {
+            creditsc.SetActive(true);
+            SetBtnActive();
+
+        }
+        
+
     }
 
     public void BtnSettingsBack()
     {
         OptionsMenu.SetActive(false);
+        menuRoot.SetActive(true);
+    }
+
+    public void BtnAboutBack()
+    {
+        AboutMenu.SetActive(false);
         menuRoot.SetActive(true);
     }
     public void BtnSettingSound()
@@ -101,6 +156,7 @@ public class GameManager : MonoBehaviour
     }
     public void BtnSettingControls()
     {
+        StartCoroutine(WaitForSceneLoad());
         SoundSettings.SetActive(false);
         VideoSettings.SetActive(false);
         ControlSettings.SetActive(true);

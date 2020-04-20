@@ -15,6 +15,7 @@ TagManager:
   - Treasure
   - Ice
   - UI
+  - SpiderEnemy
   layers:
   - Default
   - TransparentFX
